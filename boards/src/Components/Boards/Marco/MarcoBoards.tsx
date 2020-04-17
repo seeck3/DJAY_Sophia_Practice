@@ -1,6 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
+
+// Redux
+import { connect } from 'react-redux';
+import { getBoards } from '../../Redux/Actions/board';
+
+// Google Login
+import GoogleLogin from 'react-google-login';
 
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,12 +22,12 @@ import mock_data from '../../../MockData/Data';
 
 import './MarcoBoards.css';
 
-const MarcoBoards = (props: any) => {
+const MarcoBoards = ({ getBoards, boardLists: { boards } }: any) => {
+  useEffect(() => {
+    getBoards();
+  }, [getBoards]);
+
   const [clickedBoard, setClickedBoard] = useState();
-  //   React.useEffect(() => {
-  //     console.log(clickedBoard);
-  //   }, [clickedBoard]);
-  let items = [];
 
   const onCreate = () => {
     alert('Creating~~~');
@@ -34,6 +41,10 @@ const MarcoBoards = (props: any) => {
     alert('Editing~~');
   };
 
+  const responseGoogle = (res: any) => {
+    console.log('res', res);
+  };
+  // let items = [];
   //   for (let i = 0; i < mock_data.length; i++) {
   //     items.push(
   //       <tr>
@@ -58,6 +69,15 @@ const MarcoBoards = (props: any) => {
 
   return (
     <div>
+      <div>
+        <GoogleLogin
+          clientId='28366971351-i9a8u6vctn8ij1h77pa5v53i3j346oct.apps.googleusercontent.com'
+          buttonText='Login'
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={'single_host_origin'}
+        />
+      </div>
       <div className='header-container'>
         <h1>This is Marco Boards</h1>
         <button onClick={onCreate}>
@@ -121,4 +141,6 @@ const MarcoBoards = (props: any) => {
 
 MarcoBoards.propTypes = {};
 
-export default MarcoBoards;
+const mapStateToProps = (state: any) => ({ boardLists: state.board });
+
+export default connect(mapStateToProps, { getBoards })(MarcoBoards);
