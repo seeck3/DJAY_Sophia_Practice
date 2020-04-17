@@ -8,6 +8,7 @@ import {
   faTrashAlt,
   faEdit,
   faArrowLeft,
+  faPlusCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 import mock_data from '../../../MockData/Data';
@@ -20,6 +21,11 @@ const MarcoBoards = (props: any) => {
   //     console.log(clickedBoard);
   //   }, [clickedBoard]);
   let items = [];
+
+  const onCreate = () => {
+    alert('Creating~~~');
+  };
+
   function onDelete() {
     alert('Deleting~~');
   }
@@ -52,7 +58,12 @@ const MarcoBoards = (props: any) => {
 
   return (
     <div>
-      <h1>This is Marco Boards</h1>
+      <div className='header-container'>
+        <h1>This is Marco Boards</h1>
+        <button onClick={onCreate}>
+          <FontAwesomeIcon icon={faPlusCircle} />
+        </button>
+      </div>
 
       {!clickedBoard ? (
         <table>
@@ -69,12 +80,14 @@ const MarcoBoards = (props: any) => {
               <td>{data.author.firstName + ' ' + data.author.lastName}</td>
               <td>{<Moment format='MM/DD/YYYY'>{data.createdOn}</Moment>}</td>
               <td>
-                <button onClick={() => onDelete()}>
-                  <FontAwesomeIcon icon={faTrashAlt} />
-                </button>
-                <button onClick={() => onEdit()}>
-                  <FontAwesomeIcon icon={faEdit} />
-                </button>
+                <div className='action-container'>
+                  <button onClick={() => onDelete()}>
+                    <FontAwesomeIcon icon={faTrashAlt} />
+                  </button>
+                  <button onClick={() => onEdit()}>
+                    <FontAwesomeIcon icon={faEdit} />
+                  </button>
+                </div>
               </td>
             </tr>
           ))}

@@ -1,3 +1,14 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.action-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -26,10 +37,10 @@ th:nth-child(1) {
 th:nth-child(2) {
   width: 15%;
 }
-/* th:nth-last-child(2),
-td:nth-last-child(2) {
+th:nth-last-child(1),
+td:nth-last-child(1) {
   text-align: center;
-} */
+}
 
 tr:nth-child(odd) {
   background-color: #f0f0f0;
@@ -46,4 +57,5 @@ button {
   border: 1px solid black;
   border-radius: 10px;
   text-align: center;
+  padding: 5px 1em;
 }
