@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import mock_data from '../../../MockData/Data';
-// @ts-ignore
-const SophiaBoards = (props) => {
-  console.log('this is fake data', mock_data);
+import mock_data from "../../../MockData/Data";
+
+const SophiaBoards = props => {
+  console.log("this is fake data", mock_data);
   return (
     <div>
       <h1>This Is Sophia Boards</h1>
@@ -14,8 +14,8 @@ const SophiaBoards = (props) => {
         <br />
         <strong>Content</strong> : {mock_data[2].content}
         <br />
-        <strong>Author</strong> :{' '}
-        {mock_data[2].author.firstName + ' ' + mock_data[2].author.lastName}
+        <strong>Author</strong> :{" "}
+        {mock_data[2].author.firstName + " " + mock_data[2].author.lastName}
       </p>
     </div>
   );

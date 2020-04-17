@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import mock_data from '../../../MockData/Data';
+import mock_data from "../../../MockData/Data";
 
-// @ts-ignore
-const DJBoards = (props) => {
-  console.log('this is fake data', mock_data);
+const DJBoards = props => {
+  console.log("this is fake data", mock_data);
 
   return (
     <div>
@@ -17,8 +16,8 @@ const DJBoards = (props) => {
         <br />
         <strong>Content</strong> : {mock_data[1].content}
         <br />
-        <strong>Author</strong> :{' '}
-        {mock_data[1].author.firstName + ' ' + mock_data[1].author.lastName}
+        <strong>Author</strong> :{" "}
+        {mock_data[1].author.firstName + " " + mock_data[1].author.lastName}
       </p>
     </div>
   );

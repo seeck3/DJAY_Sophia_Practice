@@ -1,36 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import Moment from 'react-moment';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import Moment from "react-moment";
 
 // Google Login
-import GoogleLogin from 'react-google-login';
+import GoogleLogin from "react-google-login";
 
 // Icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrashAlt,
   faEdit,
   faArrowLeft,
-  faPlusCircle,
-} from '@fortawesome/free-solid-svg-icons';
+  faPlusCircle
+} from "@fortawesome/free-solid-svg-icons";
 
-import mock_data from '../../../MockData/Data';
+import mock_data from "../../../MockData/Data";
 
-import './MarcoBoards.css';
+import "./MarcoBoards.css";
 
-const MarcoBoards = (props: any) => {
+const MarcoBoards = props => {
   const [clickedBoard, setClickedBoard] = useState();
 
   const onCreate = () => {
-    alert('Creating~~~');
+    alert("Creating~~~");
   };
 
   function onDelete() {
-    alert('Deleting~~');
+    alert("Deleting~~");
   }
 
   const onEdit = () => {
-    alert('Editing~~');
+    alert("Editing~~");
   };
 
   let items = [];
@@ -41,9 +41,9 @@ const MarcoBoards = (props: any) => {
           {mock_data[i].title}
         </td>
         <td>
-          {mock_data[i].author.firstName + ' ' + mock_data[i].author.lastName}
+          {mock_data[i].author.firstName + " " + mock_data[i].author.lastName}
         </td>
-        <td>{<Moment format='MM/DD/YYYY'>{mock_data[i].createdOn}</Moment>}</td>
+        <td>{<Moment format="MM/DD/YYYY">{mock_data[i].createdOn}</Moment>}</td>
         <td>
           <button onClick={() => onDelete()}>
             <FontAwesomeIcon icon={faTrashAlt} />
@@ -82,7 +82,7 @@ const MarcoBoards = (props: any) => {
           </p>
           <p>
             <strong>Created By: </strong>
-            {clickedBoard.author.firstName + ' ' + clickedBoard.author.lastName}
+            {clickedBoard.author.firstName + " " + clickedBoard.author.lastName}
           </p>
         </div>
         <button onClick={() => setClickedBoard(null)}>
@@ -94,7 +94,7 @@ const MarcoBoards = (props: any) => {
 
   return (
     <div>
-      <div className='header-container'>
+      <div className="header-container">
         <h1>This is Marco Boards</h1>
         <button onClick={onCreate}>
           <FontAwesomeIcon icon={faPlusCircle} />
