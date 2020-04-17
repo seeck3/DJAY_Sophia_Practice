@@ -4,13 +4,26 @@ const router = express.Router();
 
 const Board = require('../models/Boards');
 
+// @route GET api/board
+// @desc Get all board
+// @access public
+router.get('/', async (req, res) => {
+  try {
+    const boards = await Board.find({}).sort({ date: -1 });
+
+    res.json(boards);
+  } catch (error) {
+    console.error('error : ', error);
+    res.status(500).send('Server Error');
+  }
+});
+
 // @route POST api/board
 // @desc Create a board
 // @access public
 router.post('/', async (req, res) => {
   try {
     const text = 'creating board';
-    console.log(req.body);
     const newBoard = new Board({
       id: uuid(),
       title: req.body.title,
@@ -23,6 +36,7 @@ router.post('/', async (req, res) => {
     res.json(board);
   } catch (error) {
     console.error('error : ', error);
+    res.status(500).send('Server Error');
   }
 });
 
