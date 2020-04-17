@@ -8,6 +8,15 @@
   justify-content: space-evenly;
   align-items: center;
 }
+button {
+  background-color: #f0f0f0;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 1em;
+}
+
+/* Table CSS */
 
 table {
   font-family: arial, sans-serif;
@@ -20,17 +29,12 @@ td:nth-child(1) {
 td:nth-child(1):hover {
   opacity: 0.5;
 }
-
 td,
 th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
-/* th {
-  text-align: center;
-} */
-
 th:nth-child(1) {
   width: 60%;
 }
@@ -41,7 +45,6 @@ th:nth-last-child(1),
 td:nth-last-child(1) {
   text-align: center;
 }
-
 tr:nth-child(odd) {
   background-color: #f0f0f0;
 }
@@ -51,11 +54,4 @@ tr:nth-child(even) {
 tr:nth-child(1) {
   background-color: #ffffff;
 }
-
-button {
-  background-color: #f0f0f0;
-  border: 1px solid black;
-  border-radius: 10px;
-  text-align: center;
-  padding: 5px 1em;
-}
+/* Table CSS Done */

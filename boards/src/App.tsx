@@ -3,6 +3,9 @@ import React, { Fragment } from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { cyan } from '@material-ui/core/colors';
+// Redux
+import { Provider } from 'react-redux';
+import store from './store';
 
 import logo from './logo.svg';
 import './App.css';
@@ -25,12 +28,14 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Fragment>
-        <Header />
-        <Container />
-      </Fragment>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Fragment>
+          <Header />
+          <Container />
+        </Fragment>
+      </ThemeProvider>
+    </Provider>
   );
 }
 
