@@ -1,4 +1,0 @@
-generate the jwttoken using passport (token_id) from google account
-
-stored in mongodb
-

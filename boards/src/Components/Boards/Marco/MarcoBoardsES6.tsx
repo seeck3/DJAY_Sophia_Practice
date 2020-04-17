@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 
-// Redux
-import { connect } from 'react-redux';
-import { getBoards } from '../../../Redux/Actions/board';
-
 // Google Login
 import GoogleLogin from 'react-google-login';
 
@@ -22,11 +18,7 @@ import mock_data from '../../../MockData/Data';
 
 import './MarcoBoards.css';
 
-const MarcoBoardsES6 = ({ getBoards, boardLists: { boards } }: any) => {
-  useEffect(() => {
-    getBoards();
-  }, [getBoards]);
-
+const MarcoBoardsES6 = (props: any) => {
   const [clickedBoard, setClickedBoard] = useState();
 
   const onCreate = () => {
@@ -41,21 +33,8 @@ const MarcoBoardsES6 = ({ getBoards, boardLists: { boards } }: any) => {
     alert('Editing~~');
   };
 
-  const responseGoogle = (res: any) => {
-    console.log('res', res);
-  };
-
   return (
     <div>
-      <div>
-        <GoogleLogin
-          clientId='28366971351-i9a8u6vctn8ij1h77pa5v53i3j346oct.apps.googleusercontent.com'
-          buttonText='Login'
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-          cookiePolicy={'single_host_origin'}
-        />
-      </div>
       <div className='header-container'>
         <h1>This is Marco Boards</h1>
         <button onClick={onCreate}>
@@ -118,6 +97,4 @@ const MarcoBoardsES6 = ({ getBoards, boardLists: { boards } }: any) => {
 
 MarcoBoardsES6.propTypes = {};
 
-const mapStateToProps = (state: any) => ({ boardLists: state.board });
-
-export default connect(mapStateToProps, { getBoards })(MarcoBoardsES6);
+export default MarcoBoardsES6;
