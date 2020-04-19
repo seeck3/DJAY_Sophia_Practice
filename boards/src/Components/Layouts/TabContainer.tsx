@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 const TabContainer = (props: any) => {
   const classes = useStyles();
   // 학생에 맞춰서 바꿀것 동준=0 재호=1 혜미=2
-  const [value, setValue] = React.useState(3);
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event: any, newValue: any) => {
     setValue(newValue);
