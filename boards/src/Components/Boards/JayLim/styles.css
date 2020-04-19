@@ -1,0 +1,22 @@
+/* .header{
+    color:red;
+    font-size:40px;
+} */
+
+h1{
+    color:blue;
+}
+.header1{
+    color:grey;
+}
+
+.header2{
+    font-size:30px;
+}
+.header3{
+    color:green;
+    font-size: 55px;
+}
+.header4{
+    font-weight:lighter;
+}
