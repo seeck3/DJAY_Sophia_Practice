@@ -6,17 +6,26 @@
 h1{
     color:blue;
 }
-.header1{
-    color:grey;
+.title
+{
+    font-size:50px;
+    font-weight:Bold;
 }
-
-.header2{
-    font-size:30px;
+.content
+{
+    align-items: center;
+    font-weight: lighter;
 }
-.header3{
-    color:green;
-    font-size: 55px;
+.firstName
+{
+    margin-left: 0 auto;
+    width:200px;
+    height:20px;
+    border:1px solid black;
 }
-.header4{
-    font-weight:lighter;
+.lastName
+{
+    font-size:20px;
+    font-weight: lighter;
+    
 }

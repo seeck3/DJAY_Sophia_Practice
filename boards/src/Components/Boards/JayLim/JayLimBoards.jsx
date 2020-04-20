@@ -10,9 +10,7 @@ const JayLimBoards = props => {
     <div>
       <div>
       <h1 className='header1'>This is Jay Boards</h1>
-      <h1 className='header2'>heading2</h1>
-      <h1 className='header3'>heading3</h1>
-      <h1 className='header4'>heading4</h1>
+      
       <p> jaes hompi</p>
       <p>
         <strong>Title</strong> : {mock_data[0].title}
@@ -25,9 +23,35 @@ const JayLimBoards = props => {
       </div>
       <div>
         <p className='title'>Title: {mock_data[0].title}</p>
-        <p>Content: {mock_data[0].content}</p>
-        <p>First Name: {mock_data[0].author.firstName}</p>
-        <p>Last Name: {mock_data[0].author.lastName}</p>
+        <p className='Content'>Content: {mock_data[0].content}</p>
+        <p className='firstName'>First Name: {mock_data[0].author.firstName}</p>
+        <p className='lastName'>Last Name: {mock_data[0].author.lastName}</p>
+        <p className='title'>Title:{mock_data[1].title}</p>
+        <p className='Content'>content:{mock_data[1].content}</p>
+        <p className='firstName'>First Name:{mock_data[1].author.firstName}</p>
+        <p className='lastName'>Last Name:{mock_data[1].author.lastName}</p>
+        <p className='title'>Title:{mock_data[2].title}</p>
+        <p className='Content'>content:{mock_data[2].content}</p>
+        <p className='firstName'>First Name:{mock_data[2].author.firstName}</p>
+        <p className='lastName'>Last Name:{mock_data[2].author.lastName}</p>
+        <p className='title'>Title:{mock_data[3].title}</p>
+        <p className='Content'>Content:{mock_data[3].content}</p>
+        <p className='firstName'>First Name:{mock_data[3].author.firstName}</p>
+        <p className='lastName'>Last Name:{mock_data[3].author.lastName}</p>
+        <p className='title'>Title:{mock_data[4].title}</p>
+        <p className='Content'>Content:{mock_data[4].content}</p>
+        <p className='firstName'>First Name:{mock_data[4].author.firstName}</p>
+        <p className='lastName'>Last Name:{mock_data[4].author.lastName}</p>
+        <p className='title'>Title:{mock_data[5].title}</p>
+        <p className='Content'>content:{mock_data[5].content}</p>
+        <p className='firstName'>First Name:{mock_data[5].author.firstName}</p>
+        <p className='lastName'>Last Name:{mock_data[5].author.lastName}</p>
+        <p className='title'>Title:{mock_data[6].title}</p>
+        <p className='Content'>Content:{mock_data[6].content}</p>
+        <p className='firstName'>First Name:{mock_data[6].author.firstName}</p>
+        <p className='lastName'>Last Name:{mock_data[6].author.lastName}</p>
+
+
       </div>
     </div>
   );
