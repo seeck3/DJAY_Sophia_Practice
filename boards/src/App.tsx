@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 // Material UI Theme
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -11,6 +11,15 @@ import logo from './logo.svg';
 import './App.css';
 import Container from './Components/Layouts/Container';
 import Header from './Components/Layouts/Header';
+
+import Landing from './Components/Layouts/Landing';
+import Login from './Components/Auth/Login';
+
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+
+import setAuthToken from './Redux/setAuthToken';
+
+import { loadUser } from './Redux/Actions/auth';
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -25,14 +34,22 @@ const theme = createMuiTheme({
     },
   },
 });
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 function App() {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <Fragment>
-          <Header />
-          <Container />
+          <Router>
+            <Header />
+            <Container />
+          </Router>
         </Fragment>
       </ThemeProvider>
     </Provider>

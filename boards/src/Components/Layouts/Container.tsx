@@ -5,11 +5,22 @@ import JayLimBoards from '../Boards/JayLim/JayLimBoards';
 import SophiaBoards from '../Boards/Sophia/SophiaBoards';
 import TabContainer from './TabContainer';
 
+import Landing from './Landing';
+import Login from '../Auth/Login';
+import Register from '../Auth/Register';
+
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+
+import Routes from '../Routing/Routes';
+
 const Container = (props: any) => {
   return (
     <Fragment>
       <div className='main-container'>
-        <TabContainer />
+        <Switch>
+          <Routes />
+        </Switch>
+        {/* <TabContainer /> */}
       </div>
     </Fragment>
   );

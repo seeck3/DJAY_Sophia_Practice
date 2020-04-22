@@ -21,13 +21,60 @@ import {
 import mock_data from '../../../MockData/Data';
 
 import './MarcoBoards.css';
+import axios from 'axios';
 
-const MarcoBoards = ({ getBoards, boardLists: { boards } }: any) => {
+import setAuthToken from '../../../Redux/setAuthToken';
+import { logout } from '../../../Redux/Actions/auth';
+import { Redirect } from 'react-router-dom';
+
+const MarcoBoards = ({
+  logout,
+  getBoards,
+  boardLists: { boards },
+  isAuthenticated,
+}: any) => {
   useEffect(() => {
     getBoards();
   }, [getBoards]);
 
-  const [clickedBoard, setClickedBoard] = useState();
+  const [clickedBoard, setClickedBoard] = useState<any>();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState<any>([]);
+  // const login = async () => {
+  //   // const config = {
+  //   //   headers: {
+  //   //     'Content-Type': 'application/json',
+  //   //   },
+  //   // };
+  //   const formData = {
+  //     email,
+  //     password,
+  //   };
+  //   try {
+  //     // const loginUser = await axios.post('/api/auth/login', formData, config);
+  //     // .catch((err) => {
+  //     //   console.log('err', err.response.data.errors);
+  //     // });
+  //     // console.log('loginUser', loginUser);
+  //     // if (loginUser) {
+  //     //   const token = loginUser.data.token;
+  //     //   localStorage.setItem('token', token);
+  //     //   setAuthToken(token);
+  //     // }
+  //   } catch (error) {
+  //     // console.log('error : ', error.response.data);
+  //     // setError([...error.response.data.errors]);
+  //     // setTimeout(() => {
+  //     //   setError(null);
+  //     // }, 1500);
+  //   }
+  // };
+  // const logoff = async () => {
+  //   // console.log('logoff');
+  //   // await axios.get('/api/auth/logoff');
+  //   logout();
+  // };
 
   const onCreate = () => {
     alert('Creating~~~');
@@ -102,18 +149,22 @@ const MarcoBoards = ({ getBoards, boardLists: { boards } }: any) => {
       </div>
     );
   }
-
+  if (!isAuthenticated) return <Redirect to='/login' />;
   return (
     <div>
       <div>
-        <GoogleLogin
+        {/* <GoogleLogin
           clientId='28366971351-i9a8u6vctn8ij1h77pa5v53i3j346oct.apps.googleusercontent.com'
           buttonText='Login'
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
           cookiePolicy={'single_host_origin'}
         />
+        <input type='text' onChange={(e) => setEmail(e.target.value)} />
+        <input type='text' onChange={(e) => setPassword(e.target.value)} />
+        <button onClick={login}>login</button> */}
       </div>
+      <div>{!!error && error.map((err: any) => <div>{err.msg}</div>)}</div>
       <div className='header-container'>
         <h1>This is Marco Boards</h1>
         <button onClick={onCreate}>
@@ -128,6 +179,9 @@ const MarcoBoards = ({ getBoards, boardLists: { boards } }: any) => {
 
 MarcoBoards.propTypes = {};
 
-const mapStateToProps = (state: any) => ({ boardLists: state.board });
+const mapStateToProps = (state: any) => ({
+  boardLists: state.board,
+  isAuthenticated: state.auth.isAuthenticated,
+});
 
-export default connect(mapStateToProps, { getBoards })(MarcoBoards);
+export default connect(mapStateToProps, { getBoards, logout })(MarcoBoards);
