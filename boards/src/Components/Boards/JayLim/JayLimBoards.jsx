@@ -1,14 +1,18 @@
 import React from "react";
 import './styles.css';
 import PropTypes from "prop-types";
-import './javascript';
 
 import mock_data from "../../../MockData/Data";
+
+
+//Components
+import Register from "./Register";
 
 const JayLimBoards = props => {
   console.log(mock_data[2]);
   return (
     <div>
+      {/* <Register /> */}
       <div> 
       <p className="header"> Daily Best</p>
       </div>
