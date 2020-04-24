@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 // Material UI Theme
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import { cyan } from '@material-ui/core/colors';
+import { cyan, grey } from '@material-ui/core/colors';
 
 import logo from './logo.svg';
 import './App.css';
@@ -11,14 +11,14 @@ import Header from './Components/Layouts/Header';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: cyan[100],
+      main: grey[100],
     },
     secondary: {
-      main: cyan[400],
+      main: grey[400],
     },
     text: {
-      primary: cyan[50],
-      secondary: cyan[500],
+      primary: grey[400],
+      secondary: grey[50],
     },
   },
 });

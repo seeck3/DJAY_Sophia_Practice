@@ -13,6 +13,7 @@ import DJBoards from '../Boards/DJ/DJBoards';
 import JayLimBoards from '../Boards/JayLim/JayLimBoards';
 import SophiaBoards from '../Boards/Sophia/SophiaBoards';
 import MarcoBoards from '../Boards/Marco/MarcoBoards';
+import MicheleBoards from '../Boards/Michele/MicheleBoards';
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -63,7 +64,9 @@ const TabContainer = (props: any) => {
           <Tab color='textPrimary' label='DJ' {...a11yProps(0)} />
           <Tab color='textPrimary' label='Jay' {...a11yProps(1)} />
           <Tab color='textPrimary' label='Sophia' {...a11yProps(2)} />
-          <Tab color='textPrimary' label='Marco' {...a11yProps(3)} />
+
+          <Tab color='textPrimary' label='Michele' {...a11yProps(3)} />
+          <Tab color='textPrimary' label='Marco' {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -76,6 +79,9 @@ const TabContainer = (props: any) => {
         <SophiaBoards />
       </TabPanel>
       <TabPanel value={value} index={3}>
+        <MicheleBoards />
+      </TabPanel>
+      <TabPanel value={value} index={4}>
         <MarcoBoards />
       </TabPanel>
     </div>
