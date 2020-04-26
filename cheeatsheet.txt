@@ -1,0 +1,13 @@
+in terminal command-line
+    ls = display list of directory and files
+    cd foldername = change directory (or enter directory)
+
+how to run server
+-you should type this command in boards folder
+    npm run dev - start react application
+
+workspace or work component or work folder files
+
+  component - boards- sophiaBoards.jsx
+  can put a variable in html to create whichever 
+  css you want to change  
