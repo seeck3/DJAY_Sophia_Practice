@@ -1,4 +1,85 @@
+
+
+
 .header1 {
-    color: blue ;
+    color: black ;
     font-size: 100 px;
+    text-align: center;
+    margin-bottom: 1cm;
+    border-bottom: 1px solid darkgray;
+}
+
+.mock01 {
+    color: red;
+    font-weight: bold;
+    
+}
+
+.mock0 {
+    color:rgb(241, 81, 108);
+    background-color: rgb(252, 252, 224);
+    border-bottom: 1px solid darkgray;
+    border-top: 1px solid darkgray;
+}
+
+.mock0FirstName{
+    color: rgb(194, 96, 63);
+    text-decoration: underline;
+    }
+
+.mock0LastName{
+    color: rgb(194, 96, 63);
+    text-decoration: underline;
+
+}
+
+
+
+.mock1{
+    color: rgb(180, 80, 13);
+    background-color: seashell;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+}
+
+
+.mock11{
+    color: rgba(255, 145, 0, 0.692);
+    
+
+}
+
+.mock2{
+    color: yellow;
+    background-color: midnightblue;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+}
+.mock3{
+    color: green;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+}
+.mock4{
+    color: blue;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+}
+.mock5{
+    color: navy;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+}
+
+.aaa{
+    color: navy;
+    border-bottom : 1px solid darkgray;
+       
+}
+
+.mock6
+{
+    color: purple;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
 }
