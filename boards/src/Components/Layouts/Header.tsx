@@ -6,7 +6,7 @@ import { cyan } from '@material-ui/core/colors';
 
 const Header = (props: any) => {
   return (
-    <AppBar color='primary' className='main-header'>
+    <AppBar className='main-header'>
       <Typography variant='h2' color='textPrimary'>
         Welcome to Marco's boards
       </Typography>

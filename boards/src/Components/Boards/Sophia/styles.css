@@ -1,0 +1,106 @@
+/* .header{
+    color: red;
+    font-size: 35px;
+
+
+} */
+h1 {
+  color: rgba(170, 10, 10, 0.712);
+  text-align: center;
+  font-size: 48px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  box-sizing: border-box;
+  border: 2px solid black;
+}
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  color: rgb(148, 58, 58);
+
+  font-size: 35px;
+}
+
+.title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.title1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.title2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.title3 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.title4 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.title5 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.title6 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+}
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px;
+  color: black;
+}
+.icon-container {
+  width: 100%;
+  text-align: center;
+}
+.sentence {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+}
+.sentence1 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+}
+.sentence0 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+}
+.button1:hover {
+  background-color: rgba(255, 0, 0, 0.096);
+  color: rgb(199, 19, 19);
+  border: 2px solid rgb(165, 7, 41);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.button2:hover {
+  background-color: rgba(255, 0, 0, 0.096);
+  color: rgb(199, 19, 19);
+  border: 2px solid rgb(165, 7, 41);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.button3:hover {
+  background-color: rgba(255, 0, 0, 0.096);
+  color: rgb(199, 19, 19);
+  border: 2px solid rgb(165, 7, 41);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+label {
+  color: rgb(156, 58, 58);
+  font-weight: bold;
+  width: 150px;
+  float: left;
+}

@@ -1,22 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "./styles.css";
 import PropTypes from "prop-types";
 
 import mock_data from "../../../MockData/Data";
+import CreateBoard from "./CreateBoard";
 
-const SophiaBoards = props => {
-  console.log("this is fake data", mock_data);
+const SophiaBoards = (props) => {
+  const [isCreate, setIsCreate] = useState(false);
+  const [data, setData] = useState(mock_data);
+
+  let dataMapping = [];
+
+  for (let i = 0; i < data.length; i++) {
+    dataMapping.push(
+      <div>
+        <p className="title">Title : {data[i].title}</p>
+        <p>Content :{data[i].content}</p>
+        <p>First Name :{data[i].author.firstName}</p>
+        <p>Last Name :{data[i].author.lastName}</p>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <h1>This Is Sophia Boards</h1>
-      <p>Make your boards here</p>
-      <p>
-        <strong>Title</strong> : {mock_data[2].title}
-        <br />
-        <strong>Content</strong> : {mock_data[2].content}
-        <br />
-        <strong>Author</strong> :{" "}
-        {mock_data[2].author.firstName + " " + mock_data[2].author.lastName}
-      </p>
+      <div>
+        {" "}
+        <div className="icon-container"></div>
+        <h1 className="header1"> Queen Sophia</h1>
+        <button
+          onClick={function () {
+            setIsCreate(!isCreate);
+          }}
+        >
+          {isCreate ? "Go Back" : "Add Board"}
+        </button>
+        <CreateBoard setData={setData} data={data} />
+        <h2 classNamer="header2"> (This is just an example)</h2>
+      </div>
+      {dataMapping}
     </div>
   );
 };
